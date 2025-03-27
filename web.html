@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shoppy - Online Store</title>
+    <link rel="icon" type="image/png" href="download.png" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+      }
+
+      /* Cart Button */
+      #cart {
+        position: fixed;
+        top: 15px;
+        right: 25px;
+        background: #ff416c;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        z-index: 1000;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+      #cart:hover {
+        background: white;
+        color: #ff416c;
+        border: 2px solid #ff416c;
+      }
+
+      #cart span {
+        background: white;
+        color: #ff416c;
+        padding: 5px 10px;
+        border-radius: 50%;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      #container {
+        width: 90%;
+        max-width: 1300px;
+        margin: 50px auto 20px;
+      }
+
+      .category {
+        margin-bottom: 40px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .category:hover {
+        transform: scale(1.03);
+      }
+
+      .category h2 {
+        text-align: center;
+        background: linear-gradient(45deg, #ff416c, #ff4b2b);
+        color: white;
+        padding: 14px;
+        border-radius: 10px;
+        font-size: 22px;
+        letter-spacing: 1px;
+      }
+
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        padding: 15px;
+      }
+
+      .product-box {
+        width: 260px;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .product-box:hover {
+        transform: translateY(-8px);
+      }
+
+      .product-box img {
+        width: 130px;
+        height: 130px;
+        object-fit: contain;
+        border-radius: 8px;
+        margin-bottom: 12px;
+      }
+
+      .product-box h3 {
+        font-size: 16px;
+        margin: 10px 0;
+        font-weight: 600;
+      }
+
+      .product-box p {
+        font-size: 18px;
+        font-weight: bold;
+        color: #ff416c;
+        margin-bottom: 12px;
+      }
+
+      .cart-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .cart-controls button {
+        background: linear-gradient(45deg, #ff416c, #ff4b2b);
+        border-radius: 8px;
+        color: white;
+        padding: 8px 14px;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .cart-controls button:hover {
+        background: white;
+        color: #ff416c;
+        border: 2px solid #ff416c;
+      }
+
+      .quantity {
+        font-size: 16px;
+        font-weight: bold;
+        background: white;
+        padding: 8px 14px;
+        border-radius: 8px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cart">🛒 Cart: <span id="cart-count">0</span></div>
+    <div id="container"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
