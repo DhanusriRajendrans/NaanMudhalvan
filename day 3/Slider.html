@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #container{
+           
+            background-image: url('./Images/daredevil-born.jpg');
+            height: 100vh;
+            background-size: cover;
+        }
+
+        .img{
+            height: 100px;
+            background-color: azure;
+        }
+
+        .prev{
+            position: absolute;
+            top:50%;
+            transform: rotateY(180deg);
+        }
+        
+        .next{
+            position: absolute;
+            right: 0;
+            top: 50%;
+        }
+        
+        .miniImg .myimg{
+            transition-duration: 1s;
+            z-index: 0;
+            height: 100px;
+            opacity: 0.5;
+        }
+
+        .miniImg{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+        }
+
+        .miniImg .active{
+            position: relative;
+            z-index: 1;
+           opacity: 1;
+           scale: 1.2;
+           
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img class="img prev" src="https://www.pngmart.com/files/15/Arrow-PNG-Clipart.png" alt="">
+        <img class="img next" onclick="next()" src="https://www.pngmart.com/files/15/Arrow-PNG-Clipart.png" alt="">
+
+        <div class="miniImg">
+            <img class="myimg active" src="./Images/daredevil-born.jpg" alt="">
+            <img class="myimg" src="https://4kwallpapers.com/images/walls/thumbs_3t/21603.jpg" alt="">
+            <img class="myimg" src="https://4kwallpapers.com/images/walls/thumbs_3t/21608.jpg" alt="">
+            <img class="myimg" src="https://4kwallpapers.com/images/walls/thumbs_3t/19448.jpg" alt="">
+        </div>
+    </div>
+
+    <script src="./Slider.js"></script>
+</body>
+</html>
